@@ -98,7 +98,7 @@ module cla_16(
 
 endmodule
 
-module adder(
+module adder_32(
 	input [32:1] A,
 	input [32:1] B,
 	output [32:1] S,
@@ -117,3 +117,28 @@ module adder(
 
 endmodule
 
+module Add(
+	input wire[32:1] a,
+	input wire[32:1] b,
+	output reg[32:1] sum
+);
+
+	wire [32:1] res;
+	adder_32 add(.A(a), .B(b), .S(res), .c32());
+	always @* begin
+		sum <= res;
+	end
+
+endmodule
+
+// module adder(
+//         input wire[15:0] a,
+//         input wire[15:0] b,
+//         output wire[15:0] sum,
+//         output wire carry
+//     );
+
+//     wire zero = 0;
+//     cla_16 add(.A(a), .B(b), .c0(zero), .S(sum), .gx(carry), .px(zero));
+
+// endmodule
