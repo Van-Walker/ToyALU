@@ -131,14 +131,15 @@ module Add(
 
 endmodule
 
-// module adder(
-//         input wire[15:0] a,
-//         input wire[15:0] b,
-//         output wire[15:0] sum,
-//         output wire carry
-//     );
+module adder(
+        input wire[15:0] a,
+        input wire[15:0] b,
+        output wire[15:0] sum,
+        output wire carry
+		
+    );
 
-//     wire zero = 0;
-//     cla_16 add(.A(a), .B(b), .c0(zero), .S(sum), .gx(carry), .px(zero));
+    wire zero = 0;
+    cla_16 add(.A(a), .B(b), .c0(zero), .S(sum), .gx(), .px());
 
-// endmodule
+endmodule
